@@ -1,0 +1,377 @@
+{
+  "individualResults": [
+    {
+      "initialSchemaVersion": null,
+      "targetSchemaVersion": null,
+      "schemaName": "",
+      "migrations": [
+        {
+          "category": "Versioned",
+          "version": "1",
+          "description": "Views",
+          "type": "SQL",
+          "filepath": "C:\\Users\\KEVIN CHANG\\Desktop\\flyway-9.17.0\\sql\\V1__Views.sql",
+          "executionTime": 4879
+        }
+      ],
+      "migrationsExecuted": 1,
+      "success": false,
+      "flywayVersion": "9.17.0",
+      "database": "caso3",
+      "warnings": [],
+      "timestamp": "2023-05-03T20:13:11.855836700",
+      "operation": "migrate",
+      "exception": "Migration V2__InsertData.sql failed\n-----------------------------------\nSQL State  : 23000\nError Code : 2627\nMessage    : Violation of PRIMARY KEY constraint \u0027PK_contrato\u0027. Cannot insert duplicate key in object \u0027dbo.contrato\u0027. The duplicate key value is (11).\nLocation   : sql\\V2__InsertData.sql (C:\\Users\\KEVIN CHANG\\Desktop\\flyway-9.17.0\\sql\\V2__InsertData.sql)\nLine       : 1\nStatement  : use caso3;\r\n\r\ninsert into ciudades (nombre, zipcode) values (\u0027Los Angeles\u0027, \u002710011\u0027);\r\ninsert into ciudades (nombre, zipcode) values (\u0027San Jose\u0027, \u002720311\u0027);\r\ninsert into ciudades (nombre, zipcode) values (\u0027Stopera\u0027, \u002751101\u0027);\r\n\r\ninsert into Estado (nombre, ciudad_id) values (\u0027San Jose\u0027, 2);\r\ninsert into Estado (nombre, ciudad_id) values (\u0027Califronia\u0027, 1);\r\ninsert into Estado (nombre, ciudad_id) values (\u0027Amsterdam\u0027, 3);\r\n\r\ninsert into paises (nombre, estado_id) values (\u0027Costa Rica\u0027, 1);\r\ninsert into paises (nombre, estado_id) values (\u0027Holanda\u0027, 3);\r\ninsert into paises (nombre, estado_id) values (\u0027USA\u0027, 2);\r\n\r\ninsert into ubicaciones (pais_id, descripcion) values (1, \u0027Atlantico\u0027);\r\ninsert into ubicaciones (pais_id, descripcion) values (2, \u0027Pacifico\u0027);\r\ninsert into ubicaciones (pais_id, descripcion) values (3, \u0027Medio Oeste\u0027);\r\n\r\ninsert into regiones (nombre, ciudad_id, estado_id, pais_id) values (\u0027Atlantico\u0027, 2, 1, 1);\r\ninsert into regiones (nombre, ciudad_id, estado_id, pais_id) values (\u0027Pacifico\u0027, 3, 3, 2);\r\ninsert into regiones (nombre, pais_id) values (\u0027Medio Oeste\u0027, 3);\r\n\r\ninsert into  tipo_desecho (nombre, reciclable) values (\u0027plasticos\u0027, 1);\r\ninsert into  tipo_desecho (nombre, reciclable) values (\u0027nuclear\u0027, 0);\r\ninsert into  tipo_desecho (nombre, reciclable) values (\u0027organico\u0027, 1);\r\n\r\ninsert into desechos (nombre, unidad, tipodes_id) values (\u0027botella\u0027, \u0027unitario\u0027, 1);\r\ninsert into desechos (nombre, unidad, tipodes_id) values (\u0027uranio\u0027, \u0027kg\u0027, 2);\r\ninsert into desechos (nombre, unidad, tipodes_id) values (\u0027cascaras de banana\u0027, \u0027kg\u0027, 4);\r\n\r\ninsert into tipo_contactos (nombre) values (\u0027telefono\u0027);\r\ninsert into tipo_contactos (nombre) values (\u0027correo\u0027);\r\ninsert into tipo_contactos (nombre) values (\u0027fax\u0027);\r\n\r\ninsert into actores (descripcion, region_id) values (\u0027gobierno\u0027, 1);\r\ninsert into actores (descripcion, region_id) values (\u0027municipalidad\u0027, 2);\r\ninsert into actores (descripcion, region_id) values (\u0027ayuntamiento\u0027, 3);\r\n\r\ninsert into contacto_x_actor (actor_id, contacto_id) values (1, 2);\r\ninsert into contacto_x_actor (actor_id, contacto_id) values (2, 3);\r\ninsert into contacto_x_actor (actor_id, contacto_id) values (1, 3);\r\n\r\ninsert into contacto_value (tipo_id, value, posttime, enable) values (2, \u0027hola@gmail.com\u0027, \u00272003-03-12 12:12:00\u0027, 1);\r\ninsert into contacto_value (tipo_id, value, posttime, enable) values (1, \u002722317508\u0027, \u00272004-03-12 01:12:00\u0027, 1);\r\ninsert into contacto_value (tipo_id, value, posttime, enable) values (3, \u002727671111\u0027, \u00272005-03-12 00:12:00\u0027, 0);\r\n\r\ninsert into productores_residuos (nombre, horario, porcentaje_carbon, balance, ubicaicon_id, contacto_id) values (\u0027Taco Bell\u0027, \u002700:12:00\u0027, \u00270.3\u0027, \u0027500000.80\u0027, 2, 1);\r\ninsert into productores_residuos (nombre, horario, porcentaje_carbon, balance, ubicaicon_id, contacto_id) values (\u0027KFC\u0027, \u002712:30:00\u0027, \u00270.8\u0027, \u00271100000.80\u0027, 3, 2);\r\ninsert into productores_residuos (nombre, horario, porcentaje_carbon, balance, ubicaicon_id, contacto_id) values (\u0027Barcelo\u0027, \u002721:15:00\u0027, \u00270.8\u0027, \u002790012100.5\u0027, 1, 3);\r\n\r\n\r\n\r\n-- falta correr\r\ninsert into recolectores (productor_id, nombre, ubicacion_id) values (1, \u0027CoopeSan\u0027, 1);\r\ninsert into recolectores (productor_id, nombre, ubicacion_id) values (2, \u0027TranSan\u0027, 3);\r\ninsert into recolectores (productor_id, nombre, ubicacion_id) values (3, \u0027NationTran\u0027, 2);\r\n\r\ninsert into local_ev (telefono, ubicacion_id) values (24097689, 1);\r\ninsert into local_ev (telefono, ubicacion_id) values (22097689, 1);\r\ninsert into local_ev (telefono, ubicacion_id) values (79093, 2);\r\ninsert into local_ev (telefono, ubicacion_id) values (7809348, 2);\r\ninsert into local_ev (telefono, ubicacion_id) values (1290934, 3);\r\n\r\ninsert into tipo_movimiento (mov_tipo, descripcion) values (1, \u0027recolección satisfactoria\u0027);\r\ninsert into tipo_movimiento (mov_tipo, descripcion) values (2, \u0027recolección con daños\u0027);\r\ninsert into tipo_movimiento (mov_tipo, descripcion) values (3, \u0027recolección no aprobada\u0027);\r\ninsert into tipo_movimiento (mov_tipo, descripcion) values (4, \u0027chequeo en sitio\u0027);\r\ninsert into tipo_movimiento (mov_tipo, descripcion) values (5, \u0027chequeo en planta\u0027);\r\n\r\n-- CAMBIAR EL TIPO DE DATO DE MEDIDA A VARCHAR\r\ninsert into tipo_recipientes (nombre, capacidad, medida, marca, modelo, cant_uso, cant_out, cant_reparacion, cant_disponible) values (\u0027Químicos\u0027, 1, \u0027Litros\u0027, \u0027BRAND\u0027, \u00272.0\u0027, 25, 12, 43, 260);\r\ninsert into tipo_recipientes (nombre, capacidad, medida, marca, modelo, cant_uso, cant_out, cant_reparacion, cant_disponible) values (\u0027Cartón\u0027, 10, \u0027Kg\u0027, \u0027BRAND\u0027, \u00273.1.0\u0027, 42, 3, 56, 764);\r\ninsert into tipo_recipientes (nombre, capacidad, medida, marca, modelo, cant_uso, cant_out, cant_reparacion, cant_disponible) values (\u0027Papel\u0027, 50, \u0027Kg\u0027, \u0027BRAND\u0027, \u00271.0\u0027, 65, 12, 23, 500);\r\ninsert into tipo_recipientes (nombre, capacidad, medida, marca, modelo, cant_uso, cant_out, cant_reparacion, cant_disponible) values (\u0027Orgánico\u0027, 50, \u0027Kg\u0027, \u0027BRAND\u0027, \u00272.0\u0027, 74, 10, 54, 946);\r\n\r\ninsert into usuarios (nombre, apellido, apellido2, email, [enable]) values (\u0027Erika\u0027,\u0027Cerdas\u0027,\u0027Mejias\u0027,\u0027ecerdas@gmail.com\u0027, 1);\r\ninsert into usuarios (nombre, apellido, apellido2, email, [enable]) values (\u0027Kevin\u0027,\u0027Chang\u0027,\u0027Chang\u0027,\u0027kchang@gmail.com\u0027, 1);\r\ninsert into usuarios (nombre, apellido, apellido2, email, [enable]) values (\u0027Carlos\u0027,\u0027Mejias\u0027,\u0027Mejias\u0027,\u0027mejias2@gmail.com\u0027, 0);\r\n\r\nUpdate contrato Set ubicacion_id  \u003d 2 where contrato_id \u003d 12;\r\n\r\ninsert into contrato (descripcion, recolector_id, ubicacion_id) values (\u0027Contrato entre KFC y esencial verde\u0027, 6, 3);\r\ninsert into contrato (descripcion, recolector_id, ubicacion_id) values (\u0027Contrato entre TacoBell y esencial verde\u0027, 5, 1);\r\ninsert into contrato (descripcion, recolector_id, ubicacion_id) values (\u0027Contrato entre Barcelo y esencial verde\u0027, 4, 2);\r\n\r\ninsert into proceso (volumen, clasificacion, ev_id, fecha, estado, costo, contrato_id) values (400000.00, 1, 1, \u00272023-05-01 09:45:00\u0027,\u0027en proceso\u0027, 1000000, 12);\r\ninsert into proceso (volumen, clasificacion, ev_id, fecha, estado, costo, contrato_id) values (350000.00, 2, 2, \u00272022-05-02 10:45:00\u0027,\u0027en proceso\u0027, 5000000, 10);\r\ninsert into proceso (volumen, clasificacion, ev_id, fecha, estado, costo, contrato_id) values (670000.00, 1, 6, \u00272022-02-13 09:45:00\u0027,\u0027terminado\u0027, 1500000, 11);\r\n\r\ninsert into desecho_movimientos (posttime, responsible_name, ubicacion_id, recolector_id, productor_id, ev_id, tipomov_id, tiporec_id, reci_desecho_cantidad, user_id, computer,[user], proceso_id) values (\u00272023-04-30 07:45:00\u0027, \u0027Karla Sanchez\u0027, 1, 4, 3, 2, 1, 1, 0.6, 1, \u0027localhost\u0027, \u0027root\u0027, 7);\r\ninsert into desecho_movimientos (posttime, responsible_name, ubicacion_id, recolector_id, productor_id, ev_id, tipomov_id, tiporec_id, reci_desecho_cantidad, user_id, computer,[user], proceso_id) values (\u00272023-05-01 07:45:00\u0027, \u0027Carlos Arias\u0027,  2, 6, 1, 6, 2, 2, 9, 2, \u0027localhost\u0027, \u0027root\u0027, 4);\r\ninsert into desecho_movimientos (posttime, responsible_name, ubicacion_id, recolector_id, productor_id, ev_id, tipomov_id, tiporec_id, reci_desecho_cantidad, user_id, computer,[user], proceso_id) values (\u00272023-04-30 07:45:00\u0027, \u0027Jesus Sanchez\u0027, 3, 5, 2, 8, 3, 3, 45, 3, \u0027localhost\u0027, \u0027root\u0027, 5);\r\n\r\ninsert into recursos_materiales (descripcion) values (\u0027Papel\u0027);\r\ninsert into recursos_materiales (descripcion) values (\u0027Carton\u0027);\r\ninsert into recursos_materiales (descripcion) values (\u0027plastico\u0027);\r\n\r\ninsert into materiales_para_producto (posttime, cantidad, recurso_id, medida, w_mov_id) values (\u00272003-03-12 12:12:00\u0027, 12.1, 5, \u0027gramos\u0027, 8);\r\ninsert into materiales_para_producto (posttime, cantidad, recurso_id, medida, w_mov_id) values (\u00272004-03-11 07:12:00\u0027, 15.1, 6, \u0027gramos\u0027, 9);\r\ninsert into materiales_para_producto (posttime, cantidad, recurso_id, medida, w_mov_id) values (\u00272003-12-11 00:12:00\u0027, 11.4, 4, \u0027gramos\u0027, 7);\r\n\r\ninsert into productos (descripcion, precio) values (\u0027Papel\u0027, 10.12);\r\ninsert into productos (descripcion, precio) values (\u0027Botella\u0027, 50.21);\r\ninsert into productos (descripcion, precio) values (\u0027Caja\u0027, 100.5);\r\n\r\nselect * from materiales_para_producto;\r\nselect * from productos_producidos;\r\n\r\ninsert into productos_producidos (cantidad, posttime, computer, [user], producto_id, user_id) values (10, \u00272003-03-12 12:12:00\u0027, \u0027localhost\u0027, \u0027root\u0027, 2, 1);\r\ninsert into productos_producidos (cantidad, posttime, computer, [user], producto_id, user_id) values (10, \u00272004-03-11 07:12:00\u0027, \u0027localhost\u0027, \u0027root\u0027, 3, 2);\r\ninsert into productos_producidos (cantidad, posttime, computer, [user], producto_id, user_id) values (10, \u00272003-12-11 00:12:00\u0027, \u0027localhost\u0027, \u0027root\u0027, 4, 2);\r\n\r\ninsert into productos_x_materiales (materialpp_id, producto_mat_id, cantidad) values (4, 2, 13.12);\r\ninsert into productos_x_materiales (materialpp_id, producto_mat_id, cantidad) values (5, 3, 100.1);\r\ninsert into productos_x_materiales (materialpp_id, producto_mat_id, cantidad) values (6, 3, 1234.12);\n",
+      "licenseFailed": false
+    },
+    {
+      "initialSchemaVersion": null,
+      "targetSchemaVersion": null,
+      "schemaName": "",
+      "migrations": [],
+      "migrationsExecuted": 0,
+      "success": false,
+      "flywayVersion": "9.17.0",
+      "database": "caso3",
+      "warnings": [],
+      "timestamp": "2023-05-03T20:51:16.568741500",
+      "operation": "migrate",
+      "exception": "Migration V1__Script_Creacion.sql failed\n----------------------------------------\nSQL State  : S0003\nError Code : 1801\nMessage    : Database \u0027caso3\u0027 already exists. Choose a different database name.\nLocation   : sql\\V1__Script_Creacion.sql (C:\\Users\\KEVIN CHANG\\Desktop\\flyway-9.17.0\\sql\\V1__Script_Creacion.sql)\nLine       : 4\nStatement  : /****** Object:  Database [caso3]    Script Date: 5/2/2023 8:18:36 PM ******/\r\nCREATE DATABASE [caso3]\r\n CONTAINMENT \u003d NONE\r\n ON  PRIMARY \r\n( NAME \u003d N\u0027caso3\u0027, FILENAME \u003d N\u0027C:\\Program Files\\Microsoft SQL Server\\MSSQL16.MSSQLSERVER\\MSSQL\\DATA\\caso3.mdf\u0027 , SIZE \u003d 73728KB , MAXSIZE \u003d UNLIMITED, FILEGROWTH \u003d 65536KB )\r\n LOG ON \r\n( NAME \u003d N\u0027caso3_log\u0027, FILENAME \u003d N\u0027C:\\Program Files\\Microsoft SQL Server\\MSSQL16.MSSQLSERVER\\MSSQL\\DATA\\caso3_log.ldf\u0027 , SIZE \u003d 73728KB , MAXSIZE \u003d 2048GB , FILEGROWTH \u003d 65536KB )\r\n WITH CATALOG_COLLATION \u003d DATABASE_DEFAULT, LEDGER \u003d ON\n",
+      "licenseFailed": false
+    },
+    {
+      "initialSchemaVersion": null,
+      "targetSchemaVersion": null,
+      "schemaName": "",
+      "migrations": [],
+      "migrationsExecuted": 0,
+      "success": false,
+      "flywayVersion": "9.17.0",
+      "database": "caso3",
+      "warnings": [],
+      "timestamp": "2023-05-03T20:53:11.968350900",
+      "operation": "migrate",
+      "exception": "Migration V1__Script_Creacion.sql failed\n----------------------------------------\nSQL State  : S0003\nError Code : 1801\nMessage    : Database \u0027caso3\u0027 already exists. Choose a different database name.\nLocation   : sql\\V1__Script_Creacion.sql (C:\\Users\\KEVIN CHANG\\Desktop\\flyway-9.17.0\\sql\\V1__Script_Creacion.sql)\nLine       : 4\nStatement  : /****** Object:  Database [caso3]    Script Date: 5/2/2023 8:18:36 PM ******/\r\nCREATE DATABASE [caso3]\r\n CONTAINMENT \u003d NONE\r\n ON  PRIMARY \r\n( NAME \u003d N\u0027caso3\u0027, FILENAME \u003d N\u0027C:\\Program Files\\Microsoft SQL Server\\MSSQL16.MSSQLSERVER\\MSSQL\\DATA\\caso3.mdf\u0027 , SIZE \u003d 73728KB , MAXSIZE \u003d UNLIMITED, FILEGROWTH \u003d 65536KB )\r\n LOG ON \r\n( NAME \u003d N\u0027caso3_log\u0027, FILENAME \u003d N\u0027C:\\Program Files\\Microsoft SQL Server\\MSSQL16.MSSQLSERVER\\MSSQL\\DATA\\caso3_log.ldf\u0027 , SIZE \u003d 73728KB , MAXSIZE \u003d 2048GB , FILEGROWTH \u003d 65536KB )\r\n WITH CATALOG_COLLATION \u003d DATABASE_DEFAULT, LEDGER \u003d OFF\n",
+      "licenseFailed": false
+    },
+    {
+      "initialSchemaVersion": null,
+      "targetSchemaVersion": null,
+      "schemaName": "",
+      "migrations": [
+        {
+          "category": "Versioned",
+          "version": "1",
+          "description": "Script Creacion1",
+          "type": "SQL",
+          "filepath": "C:\\Users\\KEVIN CHANG\\Desktop\\flyway-9.17.0\\sql\\V1__Script_Creacion1.sql",
+          "executionTime": 61
+        }
+      ],
+      "migrationsExecuted": 1,
+      "success": false,
+      "flywayVersion": "9.17.0",
+      "database": "caso3",
+      "warnings": [],
+      "timestamp": "2023-05-03T22:15:13.447598600",
+      "operation": "migrate",
+      "exception": "Migration V2__Script_Creacion2.sql failed\n-----------------------------------------\nSQL State  : S0002\nError Code : 208\nMessage    : Invalid object name \u0027flyway_schema_history\u0027.\nLocation   : sql\\V2__Script_Creacion2.sql (C:\\Users\\KEVIN CHANG\\Desktop\\flyway-9.17.0\\sql\\V2__Script_Creacion2.sql)\nLine       : 1351\nStatement  : SELECT version, description, script, installed_on\r\nFROM flyway_schema_history;\n",
+      "licenseFailed": false
+    },
+    {
+      "initialSchemaVersion": null,
+      "targetSchemaVersion": null,
+      "schemaName": "",
+      "migrations": [
+        {
+          "category": "Versioned",
+          "version": "1",
+          "description": "Script Creacion1",
+          "type": "SQL",
+          "filepath": "C:\\Users\\KEVIN CHANG\\Desktop\\flyway-9.17.0\\sql\\V1__Script_Creacion1.sql",
+          "executionTime": 78
+        }
+      ],
+      "migrationsExecuted": 1,
+      "success": false,
+      "flywayVersion": "9.17.0",
+      "database": "caso3",
+      "warnings": [],
+      "timestamp": "2023-05-03T22:17:33.849724200",
+      "operation": "migrate",
+      "exception": "Migration V2__Script_Creacion2.sql failed\n-----------------------------------------\nSQL State  : S0001\nError Code : 219\nMessage    : The type \u0027dbo.ProductosProducidos\u0027 already exists, or you do not have permission to create it.\nLocation   : sql\\V2__Script_Creacion2.sql (C:\\Users\\KEVIN CHANG\\Desktop\\flyway-9.17.0\\sql\\V2__Script_Creacion2.sql)\nLine       : 77\nStatement  : /****** Object:  UserDefinedTableType [dbo].[ProductosProducidos]    Script Date: 5/2/2023 8:18:37 PM ******/\r\nCREATE TYPE [dbo].[ProductosProducidos] AS TABLE(\r\n\t[producto_mat_id] [smallint] NULL,\r\n\t[cantidad] [int] NULL,\r\n\t[posttime] [datetime] NULL,\r\n\t[computer] [varchar](20) NULL,\r\n\t[user] [varchar](20) NULL,\r\n\t[producto_id] [smallint] NULL\r\n)\n",
+      "licenseFailed": false
+    },
+    {
+      "initialSchemaVersion": null,
+      "targetSchemaVersion": null,
+      "schemaName": "",
+      "migrations": [
+        {
+          "category": "Versioned",
+          "version": "1",
+          "description": "Script Creacion1",
+          "type": "SQL",
+          "filepath": "C:\\Users\\KEVIN CHANG\\Desktop\\flyway-9.17.0\\sql\\V1__Script_Creacion1.sql",
+          "executionTime": 32
+        }
+      ],
+      "migrationsExecuted": 1,
+      "success": false,
+      "flywayVersion": "9.17.0",
+      "database": "caso3",
+      "warnings": [],
+      "timestamp": "2023-05-04T00:13:38.581471200",
+      "operation": "migrate",
+      "exception": "Migration V2__Script_Creacion2.sql failed\n-----------------------------------------\nSQL State  : 40001\nError Code : 1205\nMessage    : Transaction (Process ID 64) was deadlocked on lock resources with another process and has been chosen as the deadlock victim. Rerun the transaction.\nLocation   : sql\\V2__Script_Creacion2.sql (C:\\Users\\KEVIN CHANG\\Desktop\\flyway-9.17.0\\sql\\V2__Script_Creacion2.sql)\nLine       : 1\nStatement  : ALTER DATABASE [caso3] SET COMPATIBILITY_LEVEL \u003d 160\n",
+      "licenseFailed": false
+    },
+    {
+      "initialSchemaVersion": null,
+      "targetSchemaVersion": null,
+      "schemaName": "",
+      "migrations": [
+        {
+          "category": "Versioned",
+          "version": "1",
+          "description": "Script Creacion1",
+          "type": "SQL",
+          "filepath": "C:\\Users\\KEVIN CHANG\\Desktop\\flyway-9.17.0\\sql\\V1__Script_Creacion1.sql",
+          "executionTime": 30
+        }
+      ],
+      "migrationsExecuted": 1,
+      "success": false,
+      "flywayVersion": "9.17.0",
+      "database": "caso3",
+      "warnings": [],
+      "timestamp": "2023-05-04T00:15:11.264718600",
+      "operation": "migrate",
+      "exception": "Migration V2__Script_Creacion2.sql failed\n-----------------------------------------\nSQL State  : 40001\nError Code : 1205\nMessage    : Transaction (Process ID 64) was deadlocked on lock resources with another process and has been chosen as the deadlock victim. Rerun the transaction.\nLocation   : sql\\V2__Script_Creacion2.sql (C:\\Users\\KEVIN CHANG\\Desktop\\flyway-9.17.0\\sql\\V2__Script_Creacion2.sql)\nLine       : 1\nStatement  : ALTER DATABASE [caso3] SET COMPATIBILITY_LEVEL \u003d 160\n",
+      "licenseFailed": false
+    },
+    {
+      "initialSchemaVersion": null,
+      "targetSchemaVersion": "1",
+      "schemaName": "",
+      "migrations": [
+        {
+          "category": "Versioned",
+          "version": "1",
+          "description": "creacion",
+          "type": "SQL",
+          "filepath": "C:\\Users\\KEVIN CHANG\\Desktop\\flyway-9.17.0\\sql\\V1__creacion.sql",
+          "executionTime": 67
+        }
+      ],
+      "migrationsExecuted": 1,
+      "success": true,
+      "flywayVersion": "9.17.0",
+      "database": "caso3.1",
+      "warnings": [],
+      "timestamp": "2023-05-04T12:32:22.298953100",
+      "operation": "migrate",
+      "exception": null,
+      "licenseFailed": false
+    },
+    {
+      "initialSchemaVersion": null,
+      "targetSchemaVersion": "1",
+      "schemaName": "",
+      "migrations": [
+        {
+          "category": "Versioned",
+          "version": "1",
+          "description": "creacion",
+          "type": "SQL",
+          "filepath": "C:\\Users\\KEVIN CHANG\\Desktop\\flyway-9.17.0\\sql\\V1__creacion.sql",
+          "executionTime": 80
+        }
+      ],
+      "migrationsExecuted": 1,
+      "success": true,
+      "flywayVersion": "9.17.0",
+      "database": "caso3.1",
+      "warnings": [],
+      "timestamp": "2023-05-04T12:33:17.043376900",
+      "operation": "migrate",
+      "exception": null,
+      "licenseFailed": false
+    },
+    {
+      "initialSchemaVersion": null,
+      "targetSchemaVersion": "1",
+      "schemaName": "",
+      "migrations": [
+        {
+          "category": "Versioned",
+          "version": "1",
+          "description": "creacion",
+          "type": "SQL",
+          "filepath": "C:\\Users\\KEVIN CHANG\\Desktop\\flyway-9.17.0\\sql\\V1__creacion.sql",
+          "executionTime": 44
+        }
+      ],
+      "migrationsExecuted": 1,
+      "success": true,
+      "flywayVersion": "9.17.0",
+      "database": "caso3.1",
+      "warnings": [],
+      "timestamp": "2023-05-04T12:36:31.742829500",
+      "operation": "migrate",
+      "exception": null,
+      "licenseFailed": false
+    },
+    {
+      "initialSchemaVersion": "1",
+      "targetSchemaVersion": null,
+      "schemaName": "",
+      "migrations": [],
+      "migrationsExecuted": 0,
+      "success": true,
+      "flywayVersion": "9.17.0",
+      "database": "caso3.1",
+      "warnings": [],
+      "timestamp": "2023-05-04T12:40:27.408481600",
+      "operation": "migrate",
+      "exception": null,
+      "licenseFailed": false
+    },
+    {
+      "initialSchemaVersion": null,
+      "targetSchemaVersion": "1",
+      "schemaName": "",
+      "migrations": [
+        {
+          "category": "Versioned",
+          "version": "1",
+          "description": "creacion",
+          "type": "SQL",
+          "filepath": "C:\\Users\\KEVIN CHANG\\Desktop\\flyway-9.17.0\\sql\\V1__creacion.sql",
+          "executionTime": 47
+        }
+      ],
+      "migrationsExecuted": 1,
+      "success": true,
+      "flywayVersion": "9.17.0",
+      "database": "caso3.1",
+      "warnings": [],
+      "timestamp": "2023-05-04T12:42:00.336008500",
+      "operation": "migrate",
+      "exception": null,
+      "licenseFailed": false
+    },
+    {
+      "initialSchemaVersion": null,
+      "targetSchemaVersion": null,
+      "schemaName": "",
+      "migrations": [
+        {
+          "category": "Versioned",
+          "version": "1",
+          "description": "creacion",
+          "type": "SQL",
+          "filepath": "C:\\Users\\KEVIN CHANG\\Desktop\\flyway-9.17.0\\sql\\V1__creacion.sql",
+          "executionTime": 49
+        }
+      ],
+      "migrationsExecuted": 1,
+      "success": false,
+      "flywayVersion": "9.17.0",
+      "database": "caso3.1",
+      "warnings": [],
+      "timestamp": "2023-05-04T12:52:18.714476400",
+      "operation": "migrate",
+      "exception": "Migration V2__InsertData.sql failed\n-----------------------------------\nSQL State  : 23000\nError Code : 547\nMessage    : The INSERT statement conflicted with the FOREIGN KEY constraint \"FK_Estado_ciudades\". The conflict occurred in database \"caso3.1\", table \"dbo.ciudades\", column \u0027ciudad_id\u0027.\nLocation   : sql\\V2__InsertData.sql (C:\\Users\\KEVIN CHANG\\Desktop\\flyway-9.17.0\\sql\\V2__InsertData.sql)\nLine       : 1\nStatement  : delete from productos_x_materiales where materialpp_id \u003e 0;\r\ndelete from productos_producidos where producto_mat_id \u003e 0;\r\ndelete from productos where producto_id \u003e 0;\r\ndelete from materiales_para_producto where materialpp_id \u003e 0;\r\ndelete from recursos_materiales where recurso_id \u003e 0;\r\ndelete from desecho_movimientos where w_mov_id \u003e 0;\r\ndelete from proceso where proceso_id \u003e 0;\r\ndelete from contrato where contrato_id \u003e 0;\r\ndelete from usuarios where user_id \u003e 0;\r\ndelete from tipo_recipientes where tiporec_id \u003e 0;\r\ndelete from tipo_movimiento where tipomov_id \u003e 0;\r\ndelete from local_ev where ev_id \u003e 0;\r\ndelete from recolectores where recolector_id \u003e 0;\r\ndelete from productores_residuos where productor_id \u003e 0;\r\ndelete from contacto_x_actor where actor_id \u003e 0\r\ndelete from contacto_value where contacto_id \u003e 0;\r\ndelete from actores where actor_id \u003e 0;\r\ndelete from tipo_contactos where tipo_id \u003e 0;\r\ndelete from desechos where desecho_id \u003e 0;\r\ndelete from tipo_desecho where tipodes_id \u003e 0;\r\ndelete from regiones where region_id \u003e 0;\r\ndelete from ubicaciones where ubicacion_id \u003e 0;\r\ndelete from paises where pais_id \u003e 0;\r\ndelete from Estado where estado_id \u003e 0;\r\ndelete from ciudades where ciudad_id \u003e 0;\r\n\r\nDBCC CHECKIDENT(ciudades, RESEED, 0);\r\ninsert into ciudades (nombre, zipcode) values (\u0027Los Angeles\u0027, \u002710011\u0027);\r\ninsert into ciudades (nombre, zipcode) values (\u0027San Jose\u0027, \u002720311\u0027);\r\ninsert into ciudades (nombre, zipcode) values (\u0027Stopera\u0027, \u002751101\u0027);\r\n\r\nDBCC CHECKIDENT(Estado, RESEED, 0);\r\ninsert into Estado (nombre, ciudad_id) values (\u0027San Jose\u0027, 2);\r\ninsert into Estado (nombre, ciudad_id) values (\u0027Califronia\u0027, 1);\r\ninsert into Estado (nombre, ciudad_id) values (\u0027Amsterdam\u0027, 3);\r\n\r\nDBCC CHECKIDENT(paises, RESEED, 0);\r\ninsert into paises (nombre, estado_id) values (\u0027Costa Rica\u0027, 1);\r\ninsert into paises (nombre, estado_id) values (\u0027Holanda\u0027, 3);\r\ninsert into paises (nombre, estado_id) values (\u0027USA\u0027, 2);\r\n\r\nDBCC CHECKIDENT(ubicaciones, RESEED, 0);\r\ninsert into ubicaciones (pais_id, descripcion) values (1, \u0027Atlantico\u0027);\r\ninsert into ubicaciones (pais_id, descripcion) values (2, \u0027Pacifico\u0027);\r\ninsert into ubicaciones (pais_id, descripcion) values (3, \u0027Medio Oeste\u0027);\r\n\r\nDBCC CHECKIDENT(regiones, RESEED, 0);\r\ninsert into regiones (nombre, ciudad_id, estado_id, pais_id) values (\u0027Atlantico\u0027, 2, 1, 1);\r\ninsert into regiones (nombre, ciudad_id, estado_id, pais_id) values (\u0027Pacifico\u0027, 3, 3, 2);\r\ninsert into regiones (nombre, pais_id) values (\u0027Medio Oeste\u0027, 3);\r\n\r\nDBCC CHECKIDENT(tipo_desecho, RESEED, 0);\r\ninsert into  tipo_desecho (nombre, reciclable) values (\u0027plasticos\u0027, 1);\r\ninsert into  tipo_desecho (nombre, reciclable) values (\u0027nuclear\u0027, 0);\r\ninsert into  tipo_desecho (nombre, reciclable) values (\u0027organico\u0027, 1);\r\n\r\nDBCC CHECKIDENT(desechos, RESEED, 0);\r\ninsert into desechos (nombre, unidad, tipodes_id) values (\u0027botella\u0027, \u0027unitario\u0027, 1);\r\ninsert into desechos (nombre, unidad, tipodes_id) values (\u0027uranio\u0027, \u0027kg\u0027, 2);\r\ninsert into desechos (nombre, unidad, tipodes_id) values (\u0027cascaras de banana\u0027, \u0027kg\u0027, 3);\r\n\r\nDBCC CHECKIDENT(tipo_contactos, RESEED, 0);\r\ninsert into tipo_contactos (nombre) values (\u0027telefono\u0027);\r\ninsert into tipo_contactos (nombre) values (\u0027correo\u0027);\r\ninsert into tipo_contactos (nombre) values (\u0027fax\u0027);\r\n\r\nDBCC CHECKIDENT(actores, RESEED, 0);\r\ninsert into actores (descripcion, region_id) values (\u0027gobierno\u0027, 1);\r\ninsert into actores (descripcion, region_id) values (\u0027municipalidad\u0027, 2);\r\ninsert into actores (descripcion, region_id) values (\u0027ayuntamiento\u0027, 3);\r\n\r\nDBCC CHECKIDENT(contacto_value, RESEED, 0);\r\ninsert into contacto_value (tipo_id, value, posttime, enable) values (2, \u0027hola@gmail.com\u0027, \u00272003-03-12 12:12:00\u0027, 1);\r\ninsert into contacto_value (tipo_id, value, posttime, enable) values (1, \u002722317508\u0027, \u00272004-03-12 01:12:00\u0027, 1);\r\ninsert into contacto_value (tipo_id, value, posttime, enable) values (3, \u002727671111\u0027, \u00272005-03-12 00:12:00\u0027, 0);\r\n\r\n\r\ninsert into contacto_x_actor (actor_id, contacto_id) values (1, 2);\r\ninsert into contacto_x_actor (actor_id, contacto_id) values (2, 3);\r\ninsert into contacto_x_actor (actor_id, contacto_id) values (1, 3);\r\n\r\nDBCC CHECKIDENT(productores_residuos, RESEED, 0);\r\ninsert into productores_residuos (nombre, horario, porcentaje_carbon, balance, ubicaicon_id, contacto_id) values (\u0027Taco Bell\u0027, \u002700:12:00\u0027, \u00270.3\u0027, \u0027500000.80\u0027, 2, 1);\r\ninsert into productores_residuos (nombre, horario, porcentaje_carbon, balance, ubicaicon_id, contacto_id) values (\u0027KFC\u0027, \u002712:30:00\u0027, \u00270.8\u0027, \u00271100000.80\u0027, 3, 2);\r\ninsert into productores_residuos (nombre, horario, porcentaje_carbon, balance, ubicaicon_id, contacto_id) values (\u0027Barcelo\u0027, \u002721:15:00\u0027, \u00270.8\u0027, \u002790012100.5\u0027, 1, 3);\r\n\r\n\r\n-- falta correr\r\nDBCC CHECKIDENT(recolectores, RESEED, 3);\r\ninsert into recolectores (productor_id, nombre, ubicacion_id) values (1, \u0027CoopeSan\u0027, 1);\r\ninsert into recolectores (productor_id, nombre, ubicacion_id) values (2, \u0027TranSan\u0027, 3);\r\ninsert into recolectores (productor_id, nombre, ubicacion_id) values (3, \u0027NationTran\u0027, 2);\r\n\r\nDBCC CHECKIDENT(local_ev, RESEED, 0);\r\ninsert into local_ev (telefono, ubicacion_id) values (24097689, 1);\r\ninsert into local_ev (telefono, ubicacion_id) values (22097689, 1);\r\ninsert into local_ev (telefono, ubicacion_id) values (79093, 2);\r\ninsert into local_ev (telefono, ubicacion_id) values (7809348, 2);\r\ninsert into local_ev (telefono, ubicacion_id) values (1290934, 3);\r\n\r\nDBCC CHECKIDENT(tipo_movimiento, RESEED, 0);\r\ninsert into tipo_movimiento (mov_tipo, descripcion) values (1, \u0027recolección satisfactoria\u0027);\r\ninsert into tipo_movimiento (mov_tipo, descripcion) values (2, \u0027recolección con daños\u0027);\r\ninsert into tipo_movimiento (mov_tipo, descripcion) values (3, \u0027recolección no aprobada\u0027);\r\ninsert into tipo_movimiento (mov_tipo, descripcion) values (4, \u0027chequeo en sitio\u0027);\r\ninsert into tipo_movimiento (mov_tipo, descripcion) values (5, \u0027chequeo en planta\u0027);\r\n\r\n-- CAMBIAR EL TIPO DE DATO DE MEDIDA A VARCHAR\r\nDBCC CHECKIDENT(tipo_recipientes, RESEED, 0);\r\ninsert into tipo_recipientes (nombre, capacidad, medida, marca, modelo, cant_uso, cant_out, cant_reparacion, cant_disponible) values (\u0027Químicos\u0027, 1, \u0027Litros\u0027, \u0027BRAND\u0027, \u00272.0\u0027, 25, 12, 43, 260);\r\ninsert into tipo_recipientes (nombre, capacidad, medida, marca, modelo, cant_uso, cant_out, cant_reparacion, cant_disponible) values (\u0027Cartón\u0027, 10, \u0027Kg\u0027, \u0027BRAND\u0027, \u00273.1.0\u0027, 42, 3, 56, 764);\r\ninsert into tipo_recipientes (nombre, capacidad, medida, marca, modelo, cant_uso, cant_out, cant_reparacion, cant_disponible) values (\u0027Papel\u0027, 50, \u0027Kg\u0027, \u0027BRAND\u0027, \u00271.0\u0027, 65, 12, 23, 500);\r\ninsert into tipo_recipientes (nombre, capacidad, medida, marca, modelo, cant_uso, cant_out, cant_reparacion, cant_disponible) values (\u0027Orgánico\u0027, 50, \u0027Kg\u0027, \u0027BRAND\u0027, \u00272.0\u0027, 74, 10, 54, 946);\r\n\r\nDBCC CHECKIDENT(usuarios, RESEED, 0);\r\ninsert into usuarios (nombre, apellido, apellido2, email, [enable]) values (\u0027Erika\u0027,\u0027Cerdas\u0027,\u0027Mejias\u0027,\u0027ecerdas@gmail.com\u0027, 1);\r\ninsert into usuarios (nombre, apellido, apellido2, email, [enable]) values (\u0027Kevin\u0027,\u0027Chang\u0027,\u0027Chang\u0027,\u0027kchang@gmail.com\u0027, 1);\r\ninsert into usuarios (nombre, apellido, apellido2, email, [enable]) values (\u0027Carlos\u0027,\u0027Mejias\u0027,\u0027Mejias\u0027,\u0027mejias2@gmail.com\u0027, 0);\r\n\r\nDBCC CHECKIDENT(contrato, RESEED, 9);\r\ninsert into contrato (descripcion, recolector_id, ubicacion_id) values (\u0027Contrato entre KFC y esencial verde\u0027, 6, 3);\r\ninsert into contrato (descripcion, recolector_id, ubicacion_id) values (\u0027Contrato entre TacoBell y esencial verde\u0027, 5, 1);\r\ninsert into contrato (descripcion, recolector_id, ubicacion_id) values (\u0027Contrato entre Barcelo y esencial verde\u0027, 4, 2);\r\n\r\nDBCC CHECKIDENT(proceso, RESEED, 3);\r\ninsert into proceso (volumen, clasificacion, ev_id, fecha, estado, costo, contrato_id) values (400000.00, 1, 1, \u00272023-05-01 09:45:00\u0027,\u0027en proceso\u0027, 1000000, 12);\r\ninsert into proceso (volumen, clasificacion, ev_id, fecha, estado, costo, contrato_id) values (350000.00, 2, 2, \u00272022-05-02 10:45:00\u0027,\u0027en proceso\u0027, 5000000, 10);\r\ninsert into proceso (volumen, clasificacion, ev_id, fecha, estado, costo, contrato_id) values (670000.00, 1, 5, \u00272022-02-13 09:45:00\u0027,\u0027terminado\u0027, 1500000, 11);\r\n\r\nDBCC CHECKIDENT(desecho_movimientos, RESEED, 6);\r\ninsert into desecho_movimientos (posttime, responsible_name, ubicacion_id, recolector_id, productor_id, ev_id, tipomov_id, tiporec_id, reci_desecho_cantidad, user_id, computer,[user], proceso_id) values (\u00272023-04-30 07:45:00\u0027, \u0027Karla Sanchez\u0027, 1, 4, 3, 1, 1, 1, 0.6, 1, \u0027localhost\u0027, \u0027root\u0027, 6);\r\ninsert into desecho_movimientos (posttime, responsible_name, ubicacion_id, recolector_id, productor_id, ev_id, tipomov_id, tiporec_id, reci_desecho_cantidad, user_id, computer,[user], proceso_id) values (\u00272023-05-01 07:45:00\u0027, \u0027Carlos Arias\u0027,  2, 6, 1, 3, 2, 2, 9, 2, \u0027localhost\u0027, \u0027root\u0027, 4);\r\ninsert into desecho_movimientos (posttime, responsible_name, ubicacion_id, recolector_id, productor_id, ev_id, tipomov_id, tiporec_id, reci_desecho_cantidad, user_id, computer,[user], proceso_id) values (\u00272023-04-30 07:45:00\u0027, \u0027Jesus Sanchez\u0027, 3, 5, 2, 5, 3, 3, 45, 3, \u0027localhost\u0027, \u0027root\u0027, 5);\r\n\r\nDBCC CHECKIDENT(recursos_materiales, RESEED, 3);\r\ninsert into recursos_materiales (descripcion) values (\u0027Papel\u0027);\r\ninsert into recursos_materiales (descripcion) values (\u0027Carton\u0027);\r\ninsert into recursos_materiales (descripcion) values (\u0027plastico\u0027);\r\n\r\nDBCC CHECKIDENT(materiales_para_producto, RESEED, 3);\r\ninsert into materiales_para_producto (posttime, cantidad, recurso_id, medida, w_mov_id) values (\u00272003-03-12 12:12:00\u0027, 12.1, 5, \u0027gramos\u0027, 8);\r\ninsert into materiales_para_producto (posttime, cantidad, recurso_id, medida, w_mov_id) values (\u00272004-03-11 07:12:00\u0027, 15.1, 6, \u0027gramos\u0027, 9);\r\ninsert into materiales_para_producto (posttime, cantidad, recurso_id, medida, w_mov_id) values (\u00272003-12-11 00:12:00\u0027, 11.4, 4, \u0027gramos\u0027, 7);\r\n\r\nDBCC CHECKIDENT(productos, RESEED, 1);\r\ninsert into productos (descripcion, precio) values (\u0027Papel\u0027, 10.12);\r\ninsert into productos (descripcion, precio) values (\u0027Botella\u0027, 50.21);\r\ninsert into productos (descripcion, precio) values (\u0027Caja\u0027, 100.5);\r\n\r\nDBCC CHECKIDENT(productos_producidos, RESEED, 0);\r\ninsert into productos_producidos (cantidad, posttime, computer, [user], producto_id, user_id) values (10, \u00272003-03-12 12:12:00\u0027, \u0027localhost\u0027, \u0027root\u0027, 2, 1);\r\ninsert into productos_producidos (cantidad, posttime, computer, [user], producto_id, user_id) values (10, \u00272004-03-11 07:12:00\u0027, \u0027localhost\u0027, \u0027root\u0027, 3, 2);\r\ninsert into productos_producidos (cantidad, posttime, computer, [user], producto_id, user_id) values (10, \u00272003-12-11 00:12:00\u0027, \u0027localhost\u0027, \u0027root\u0027, 4, 2);\r\n\r\ninsert into productos_x_materiales (materialpp_id, producto_mat_id, cantidad) values (4, 2, 13.12);\r\ninsert into productos_x_materiales (materialpp_id, producto_mat_id, cantidad) values (5, 3, 100.1);\r\ninsert into productos_x_materiales (materialpp_id, producto_mat_id, cantidad) values (6, 3, 1234.12);\n",
+      "licenseFailed": false
+    },
+    {
+      "initialSchemaVersion": null,
+      "targetSchemaVersion": null,
+      "schemaName": "",
+      "migrations": [
+        {
+          "category": "Versioned",
+          "version": "1",
+          "description": "creacion",
+          "type": "SQL",
+          "filepath": "C:\\Users\\KEVIN CHANG\\Desktop\\flyway-9.17.0\\sql\\V1__creacion.sql",
+          "executionTime": 30
+        },
+        {
+          "category": "Versioned",
+          "version": "2",
+          "description": "InsertData",
+          "type": "SQL",
+          "filepath": "C:\\Users\\KEVIN CHANG\\Desktop\\flyway-9.17.0\\sql\\V2__InsertData.sql",
+          "executionTime": 522
+        },
+        {
+          "category": "Versioned",
+          "version": "3",
+          "description": "StoredProcedure",
+          "type": "SQL",
+          "filepath": "C:\\Users\\KEVIN CHANG\\Desktop\\flyway-9.17.0\\sql\\V3__StoredProcedure.sql",
+          "executionTime": 74
+        }
+      ],
+      "migrationsExecuted": 3,
+      "success": false,
+      "flywayVersion": "9.17.0",
+      "database": "caso3.1",
+      "warnings": [],
+      "timestamp": "2023-05-04T13:01:20.486453200",
+      "operation": "migrate",
+      "exception": "Migration V4__Views.sql failed\n------------------------------\nSQL State  : S0001\nError Code : 1505\nMessage    : The CREATE UNIQUE INDEX statement terminated because a duplicate key was found for the object name \u0027dbo.indexado\u0027 and the index name \u0027movimientos\u0027. The duplicate key value is (1100000.80).\nLocation   : sql\\V4__Views.sql (C:\\Users\\KEVIN CHANG\\Desktop\\flyway-9.17.0\\sql\\V4__Views.sql)\nLine       : 33\nStatement  : CREATE UNIQUE CLUSTERED INDEX movimientos\r\nON indexado(balance);\r\n\r\nselect * from indexado\r\n\r\n\r\n--Dynamic View\r\nDECLARE @sql NVARCHAR(MAX)\r\n\r\nSET @sql \u003d \u0027CREATE VIEW dinamico AS \u0027 + CHAR(13) +\r\n           \u0027SELECT TOP 100 PERCENT dbo.contrato.descripcion, dbo.proceso.proceso_id, dbo.proceso.clasificacion, dbo.desecho_movimientos.posttime, dbo.desecho_movimientos.responsible_name, \u0027 + CHAR(13) +\r\n           \u0027dbo.desecho_movimientos.reci_desecho_cantidad, dbo.ubicaciones.descripcion AS Expr1, dbo.paises.nombre, dbo.productores_residuos.nombre AS Expr2, \u0027 + CHAR(13) +\r\n           \u0027dbo.productores_residuos.porcentaje_carbon, dbo.productores_residuos.balance\u0027 + CHAR(13) +\r\n           \u0027FROM dbo.contrato\u0027 + CHAR(13) +\r\n           \u0027INNER JOIN dbo.proceso ON dbo.contrato.contrato_id \u003d dbo.proceso.contrato_id\u0027 + CHAR(13) +\r\n           \u0027INNER JOIN dbo.desecho_movimientos ON dbo.proceso.proceso_id \u003d dbo.desecho_movimientos.proceso_id\u0027 + CHAR(13) +\r\n           \u0027INNER JOIN dbo.ubicaciones ON dbo.contrato.ubicacion_id \u003d dbo.ubicaciones.ubicacion_id AND dbo.desecho_movimientos.ubicacion_id \u003d dbo.ubicaciones.ubicacion_id\u0027 + CHAR(13) +\r\n           \u0027INNER JOIN dbo.paises ON dbo.ubicaciones.pais_id \u003d dbo.paises.pais_id\u0027 + CHAR(13) +\r\n           \u0027INNER JOIN dbo.productores_residuos ON dbo.desecho_movimientos.productor_id \u003d dbo.productores_residuos.productor_id AND dbo.ubicaciones.ubicacion_id \u003d dbo.productores_residuos.ubicaicon_id\u0027 + CHAR(13) +\r\n           \u0027WHERE dbo.contrato.contrato_id \u003c 12\u0027 + CHAR(13) +\r\n           \u0027ORDER BY dbo.productores_residuos.balance\u0027\r\n\r\nEXEC sp_executesql @sql;\n",
+      "licenseFailed": false
+    },
+    {
+      "initialSchemaVersion": null,
+      "targetSchemaVersion": "4",
+      "schemaName": "",
+      "migrations": [
+        {
+          "category": "Versioned",
+          "version": "1",
+          "description": "creacion",
+          "type": "SQL",
+          "filepath": "C:\\Users\\KEVIN CHANG\\Desktop\\flyway-9.17.0\\sql\\V1__creacion.sql",
+          "executionTime": 9
+        },
+        {
+          "category": "Versioned",
+          "version": "2",
+          "description": "InsertData",
+          "type": "SQL",
+          "filepath": "C:\\Users\\KEVIN CHANG\\Desktop\\flyway-9.17.0\\sql\\V2__InsertData.sql",
+          "executionTime": 378
+        },
+        {
+          "category": "Versioned",
+          "version": "3",
+          "description": "StoredProcedure",
+          "type": "SQL",
+          "filepath": "C:\\Users\\KEVIN CHANG\\Desktop\\flyway-9.17.0\\sql\\V3__StoredProcedure.sql",
+          "executionTime": 74
+        },
+        {
+          "category": "Versioned",
+          "version": "4",
+          "description": "Views",
+          "type": "SQL",
+          "filepath": "C:\\Users\\KEVIN CHANG\\Desktop\\flyway-9.17.0\\sql\\V4__Views.sql",
+          "executionTime": 2516
+        }
+      ],
+      "migrationsExecuted": 4,
+      "success": true,
+      "flywayVersion": "9.17.0",
+      "database": "caso3.1",
+      "warnings": [],
+      "timestamp": "2023-05-04T13:02:45.641948800",
+      "operation": "migrate",
+      "exception": null,
+      "licenseFailed": false
+    }
+  ]
+}
