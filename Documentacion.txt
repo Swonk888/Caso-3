@@ -1,0 +1,7 @@
+Documentacion.
+
+Todos los scripts estan en la carpeta sql dentro de flyway-9.17.0
+
+Config se cambia para funcionar en la schema de base de datos deseada.
+
+report.html muestra los migrates exitosos y las versionas subidas.
