@@ -2700,6 +2700,182 @@
       "operation": "migrate",
       "exception": null,
       "licenseFailed": false
+    },
+    {
+      "initialSchemaVersion": null,
+      "targetSchemaVersion": null,
+      "schemaName": "",
+      "migrations": [
+        {
+          "category": "Versioned",
+          "version": "1",
+          "description": "Creacion0",
+          "type": "SQL",
+          "filepath": "C:\\Users\\KEVIN CHANG\\Desktop\\Caso-3\\flyway-9.17.0\\sql\\V1__Creacion0.sql",
+          "executionTime": 317
+        },
+        {
+          "category": "Versioned",
+          "version": "2",
+          "description": "Creacion1",
+          "type": "SQL",
+          "filepath": "C:\\Users\\KEVIN CHANG\\Desktop\\Caso-3\\flyway-9.17.0\\sql\\V2__Creacion1.sql",
+          "executionTime": 501
+        },
+        {
+          "category": "Versioned",
+          "version": "3",
+          "description": "InsertData",
+          "type": "SQL",
+          "filepath": "C:\\Users\\KEVIN CHANG\\Desktop\\Caso-3\\flyway-9.17.0\\sql\\V3__InsertData.sql",
+          "executionTime": 451
+        },
+        {
+          "category": "Versioned",
+          "version": "4",
+          "description": "StoredProcedure",
+          "type": "SQL",
+          "filepath": "C:\\Users\\KEVIN CHANG\\Desktop\\Caso-3\\flyway-9.17.0\\sql\\V4__StoredProcedure.sql",
+          "executionTime": 37
+        },
+        {
+          "category": "Versioned",
+          "version": "5",
+          "description": "Views",
+          "type": "SQL",
+          "filepath": "C:\\Users\\KEVIN CHANG\\Desktop\\Caso-3\\flyway-9.17.0\\sql\\V5__Views.sql",
+          "executionTime": 317
+        },
+        {
+          "category": "Versioned",
+          "version": "6",
+          "description": "InsertData",
+          "type": "SQL",
+          "filepath": "C:\\Users\\KEVIN CHANG\\Desktop\\Caso-3\\flyway-9.17.0\\sql\\V6__InsertData.sql",
+          "executionTime": 53
+        },
+        {
+          "category": "Versioned",
+          "version": "7",
+          "description": "ProcedureTVP",
+          "type": "SQL",
+          "filepath": "C:\\Users\\KEVIN CHANG\\Desktop\\Caso-3\\flyway-9.17.0\\sql\\V7__ProcedureTVP.sql",
+          "executionTime": 16
+        },
+        {
+          "category": "Versioned",
+          "version": "8",
+          "description": "EfficiencyView",
+          "type": "SQL",
+          "filepath": "C:\\Users\\KEVIN CHANG\\Desktop\\Caso-3\\flyway-9.17.0\\sql\\V8__EfficiencyView.sql",
+          "executionTime": 768
+        }
+      ],
+      "migrationsExecuted": 8,
+      "success": false,
+      "flywayVersion": "9.17.0",
+      "database": "case3",
+      "warnings": [],
+      "timestamp": "2023-05-04T23:12:03.515277400",
+      "operation": "migrate",
+      "exception": "Migration V9__ConsultaNorma.sql failed\n--------------------------------------\nSQL State  : S0007\nError Code : 3701\nMessage    : Cannot drop the index \u0027dbo.desecho_movimientos.idx_posttime\u0027, because it does not exist or you do not have permission.\nLocation   : sql\\V9__ConsultaNorma.sql (C:\\Users\\KEVIN CHANG\\Desktop\\Caso-3\\flyway-9.17.0\\sql\\V9__ConsultaNorma.sql)\nLine       : 3\nStatement  : SELECT \r\n\tdbo.contrato.descripcion, \r\n\tdbo.proceso.proceso_id, \r\n\tdbo.proceso.clasificacion, \r\n\tdbo.desecho_movimientos.posttime, \r\n\tdbo.desecho_movimientos.responsible_name, \r\n\tdbo.desecho_movimientos.reci_desecho_cantidad, \r\n\tdbo.ubicaciones.descripcion AS Expr1, \r\n\tdbo.paises.nombre, \r\n\tdbo.productores_residuos.nombre AS Expr2, \r\n\tdbo.productores_residuos.porcentaje_carbon, \r\n\tdbo.productores_residuos.balance,\r\n\tCOUNT(*) AS total,\r\n\tSUM(dbo.desecho_movimientos.reci_desecho_cantidad) AS total_desechos,\r\n\tMIN(dbo.desecho_movimientos.posttime) AS fecha_minima,\r\n\tMAX(dbo.desecho_movimientos.posttime) AS fecha_maxima\r\nFROM dbo.contrato \r\n\tINNER JOIN dbo.proceso \r\n\t\tON dbo.contrato.contrato_id \u003d dbo.proceso.contrato_id \r\n\tINNER JOIN dbo.desecho_movimientos \r\n\t\tON dbo.proceso.proceso_id \u003d dbo.desecho_movimientos.proceso_id \r\n\tINNER JOIN dbo.ubicaciones \r\n\t\tON dbo.contrato.ubicacion_id \u003d dbo.ubicaciones.ubicacion_id \r\n\t\tAND dbo.desecho_movimientos.ubicacion_id \u003d dbo.ubicaciones.ubicacion_id \r\n\tINNER JOIN dbo.paises \r\n\t\tON dbo.ubicaciones.pais_id \u003d dbo.paises.pais_id \r\n\tINNER JOIN dbo.productores_residuos \r\n\t\tON dbo.desecho_movimientos.productor_id \u003d dbo.productores_residuos.productor_id \r\n\t\tAND dbo.ubicaciones.ubicacion_id \u003d dbo.productores_residuos.ubicaicon_id\r\nWHERE dbo.contrato.contrato_id \u003c 12\r\n\tAND dbo.desecho_movimientos.reci_desecho_cantidad \u003e 0\r\n\tAND dbo.desecho_movimientos.posttime BETWEEN \u00272022-01-01\u0027 AND \u00272022-12-31\u0027\r\n\tAND dbo.productores_residuos.balance \u003c 0\r\nGROUP BY \r\n\tdbo.contrato.descripcion, \r\n\tdbo.proceso.proceso_id, \r\n\tdbo.proceso.clasificacion, \r\n\tdbo.desecho_movimientos.posttime, \r\n\tdbo.desecho_movimientos.responsible_name, \r\n\tdbo.desecho_movimientos.reci_desecho_cantidad, \r\n\tdbo.ubicaciones.descripcion, \r\n\tdbo.paises.nombre, \r\n\tdbo.productores_residuos.nombre, \r\n\tdbo.productores_residuos.porcentaje_carbon, \r\n\tdbo.productores_residuos.balance\r\nHAVING COUNT(*) \u003e 1\r\nORDER BY \r\n\tdbo.contrato.descripcion, \r\n\tdbo.desecho_movimientos.posttime DESC\r\nFOR JSON AUTO;\r\n\r\ndrop  INDEX idx_posttime ON dbo.desecho_movimientos;\r\ndrop  INDEX idx_ubicacion_id ON dbo.contrato;\r\nCREATE NONCLUSTERED INDEX idx_posttime ON dbo.desecho_movimientos (posttime);\r\nCREATE NONCLUSTERED INDEX idx_ubicacion_id ON dbo.contrato (ubicacion_id);\r\n\r\nSELECT \r\n\tdbo.contrato.descripcion, \r\n\tdbo.proceso.proceso_id, \r\n\tdbo.proceso.clasificacion, \r\n\tdbo.desecho_movimientos.posttime, \r\n\tdbo.desecho_movimientos.responsible_name, \r\n\tdbo.desecho_movimientos.reci_desecho_cantidad, \r\n\tdbo.ubicaciones.descripcion AS Expr1, \r\n\tdbo.paises.nombre, \r\n\tdbo.productores_residuos.nombre AS Expr2, \r\n\tdbo.productores_residuos.porcentaje_carbon, \r\n\tdbo.productores_residuos.balance,\r\n\tCOUNT(*) AS total,\r\n\tSUM(dbo.desecho_movimientos.reci_desecho_cantidad) AS total_desechos,\r\n\tMIN(dbo.desecho_movimientos.posttime) AS fecha_minima,\r\n\tMAX(dbo.desecho_movimientos.posttime) AS fecha_maxima\r\nFROM dbo.contrato \r\n\tINNER JOIN dbo.proceso \r\n\t\tON dbo.contrato.contrato_id \u003d dbo.proceso.contrato_id \r\n\tINNER JOIN dbo.desecho_movimientos \r\n\t\tON dbo.proceso.proceso_id \u003d dbo.desecho_movimientos.proceso_id \r\n\tINNER JOIN dbo.ubicaciones \r\n\t\tON dbo.contrato.ubicacion_id \u003d dbo.ubicaciones.ubicacion_id \r\n\t\tAND dbo.desecho_movimientos.ubicacion_id \u003d dbo.ubicaciones.ubicacion_id \r\n\tINNER JOIN dbo.paises \r\n\t\tON dbo.ubicaciones.pais_id \u003d dbo.paises.pais_id \r\n\tINNER JOIN dbo.productores_residuos \r\n\t\tON dbo.desecho_movimientos.productor_id \u003d dbo.productores_residuos.productor_id \r\n\t\tAND dbo.ubicaciones.ubicacion_id \u003d dbo.productores_residuos.ubicaicon_id\r\nWHERE dbo.contrato.contrato_id \u003c 12\r\n\tAND dbo.desecho_movimientos.reci_desecho_cantidad \u003e 0\r\n\tAND dbo.desecho_movimientos.posttime BETWEEN \u00272022-01-01\u0027 AND \u00272022-12-31\u0027\r\n\tAND dbo.productores_residuos.balance \u003c 0\r\nGROUP BY \r\n\tdbo.contrato.descripcion, \r\n\tdbo.proceso.proceso_id, \r\n\tdbo.proceso.clasificacion, \r\n\tdbo.desecho_movimientos.posttime, \r\n\tdbo.desecho_movimientos.responsible_name, \r\n\tdbo.desecho_movimientos.reci_desecho_cantidad, \r\n\tdbo.ubicaciones.descripcion, \r\n\tdbo.paises.nombre, \r\n\tdbo.productores_residuos.nombre, \r\n\tdbo.productores_residuos.porcentaje_carbon, \r\n\tdbo.productores_residuos.balance\r\nHAVING COUNT(*) \u003e 1\r\nORDER BY \r\n\tdbo.contrato.descripcion,\r\n\tdbo.desecho_movimientos.posttime DESC\r\nFOR JSON AUTO;\n",
+      "licenseFailed": false
+    },
+    {
+      "initialSchemaVersion": null,
+      "targetSchemaVersion": "10",
+      "schemaName": "",
+      "migrations": [
+        {
+          "category": "Versioned",
+          "version": "1",
+          "description": "Creacion0",
+          "type": "SQL",
+          "filepath": "C:\\Users\\KEVIN CHANG\\Desktop\\Caso-3\\flyway-9.17.0\\sql\\V1__Creacion0.sql",
+          "executionTime": 346
+        },
+        {
+          "category": "Versioned",
+          "version": "2",
+          "description": "Creacion1",
+          "type": "SQL",
+          "filepath": "C:\\Users\\KEVIN CHANG\\Desktop\\Caso-3\\flyway-9.17.0\\sql\\V2__Creacion1.sql",
+          "executionTime": 524
+        },
+        {
+          "category": "Versioned",
+          "version": "3",
+          "description": "InsertData",
+          "type": "SQL",
+          "filepath": "C:\\Users\\KEVIN CHANG\\Desktop\\Caso-3\\flyway-9.17.0\\sql\\V3__InsertData.sql",
+          "executionTime": 413
+        },
+        {
+          "category": "Versioned",
+          "version": "4",
+          "description": "StoredProcedure",
+          "type": "SQL",
+          "filepath": "C:\\Users\\KEVIN CHANG\\Desktop\\Caso-3\\flyway-9.17.0\\sql\\V4__StoredProcedure.sql",
+          "executionTime": 33
+        },
+        {
+          "category": "Versioned",
+          "version": "5",
+          "description": "Views",
+          "type": "SQL",
+          "filepath": "C:\\Users\\KEVIN CHANG\\Desktop\\Caso-3\\flyway-9.17.0\\sql\\V5__Views.sql",
+          "executionTime": 315
+        },
+        {
+          "category": "Versioned",
+          "version": "6",
+          "description": "InsertData",
+          "type": "SQL",
+          "filepath": "C:\\Users\\KEVIN CHANG\\Desktop\\Caso-3\\flyway-9.17.0\\sql\\V6__InsertData.sql",
+          "executionTime": 56
+        },
+        {
+          "category": "Versioned",
+          "version": "7",
+          "description": "ProcedureTVP",
+          "type": "SQL",
+          "filepath": "C:\\Users\\KEVIN CHANG\\Desktop\\Caso-3\\flyway-9.17.0\\sql\\V7__ProcedureTVP.sql",
+          "executionTime": 11
+        },
+        {
+          "category": "Versioned",
+          "version": "8",
+          "description": "EfficiencyView",
+          "type": "SQL",
+          "filepath": "C:\\Users\\KEVIN CHANG\\Desktop\\Caso-3\\flyway-9.17.0\\sql\\V8__EfficiencyView.sql",
+          "executionTime": 760
+        },
+        {
+          "category": "Versioned",
+          "version": "9",
+          "description": "ConsultaNorma",
+          "type": "SQL",
+          "filepath": "C:\\Users\\KEVIN CHANG\\Desktop\\Caso-3\\flyway-9.17.0\\sql\\V9__ConsultaNorma.sql",
+          "executionTime": 173
+        },
+        {
+          "category": "Versioned",
+          "version": "10",
+          "description": "CTE",
+          "type": "SQL",
+          "filepath": "C:\\Users\\KEVIN CHANG\\Desktop\\Caso-3\\flyway-9.17.0\\sql\\V10__CTE.sql",
+          "executionTime": 49
+        }
+      ],
+      "migrationsExecuted": 10,
+      "success": true,
+      "flywayVersion": "9.17.0",
+      "database": "case3",
+      "warnings": [],
+      "timestamp": "2023-05-04T23:13:28.179555400",
+      "operation": "migrate",
+      "exception": null,
+      "licenseFailed": false
     }
   ]
 }
