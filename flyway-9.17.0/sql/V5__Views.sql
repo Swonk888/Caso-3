@@ -1,4 +1,13 @@
 --VIEW
+IF OBJECT_ID('Vista', 'V') IS NOT NULL
+    DROP VIEW Vista;
+GO
+IF OBJECT_ID('dbo.indexado', 'V') IS NOT NULL
+    DROP VIEW dbo.indexado;
+GO
+IF OBJECT_ID('dinamico', 'V') IS NOT NULL
+    DROP VIEW dinamico;
+GO
 CREATE VIEW Vista AS
 SELECT dbo.contrato.descripcion, dbo.proceso.proceso_id, dbo.proceso.clasificacion, dbo.desecho_movimientos.posttime, dbo.desecho_movimientos.responsible_name, dbo.desecho_movimientos.reci_desecho_cantidad, 
                   dbo.ubicaciones.descripcion AS Expr1, dbo.paises.nombre, dbo.productores_residuos.nombre AS Expr2, dbo.productores_residuos.porcentaje_carbon, dbo.productores_residuos.balance
@@ -29,6 +38,8 @@ AS
     WHERE dbo.contrato.contrato_id < 12
 
 GO
+
+CREATE UNIQUE CLUSTERED INDEX IX_Vista ON indexado (responsible_name);
 
 select * from indexado
 

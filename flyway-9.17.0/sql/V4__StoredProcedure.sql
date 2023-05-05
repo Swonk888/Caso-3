@@ -43,5 +43,5 @@ BEGIN
 END
 GO
 
-EXEC [dbo].[InsertarMov] 140, 'Leonardo Vega';
+EXEC [dbo].[InsertarMov] 5, 'Kevin Vega';
 
