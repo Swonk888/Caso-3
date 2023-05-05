@@ -5,3 +5,8 @@ Todos los scripts estan en la carpeta sql dentro de flyway-9.17.0
 Config se cambia para funcionar en la schema de base de datos deseada.
 
 report.html muestra los migrates exitosos y las versionas subidas.
+
+El CTE se crea en la V10 de la base de datos de flyway.
+El Stored procedures que recibe como parametro el TVP se encuentra en la V7.
+
+El documento con informacion teórica se encuentra en el .pdf

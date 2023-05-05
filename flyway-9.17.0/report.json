@@ -2604,6 +2604,102 @@
       "operation": "migrate",
       "exception": null,
       "licenseFailed": false
+    },
+    {
+      "initialSchemaVersion": null,
+      "targetSchemaVersion": "10",
+      "schemaName": "",
+      "migrations": [
+        {
+          "category": "Versioned",
+          "version": "1",
+          "description": "Creacion0",
+          "type": "SQL",
+          "filepath": "C:\\Users\\KEVIN CHANG\\Desktop\\Caso-3\\flyway-9.17.0\\sql\\V1__Creacion0.sql",
+          "executionTime": 3416
+        },
+        {
+          "category": "Versioned",
+          "version": "2",
+          "description": "Creacion1",
+          "type": "SQL",
+          "filepath": "C:\\Users\\KEVIN CHANG\\Desktop\\Caso-3\\flyway-9.17.0\\sql\\V2__Creacion1.sql",
+          "executionTime": 546
+        },
+        {
+          "category": "Versioned",
+          "version": "3",
+          "description": "InsertData",
+          "type": "SQL",
+          "filepath": "C:\\Users\\KEVIN CHANG\\Desktop\\Caso-3\\flyway-9.17.0\\sql\\V3__InsertData.sql",
+          "executionTime": 431
+        },
+        {
+          "category": "Versioned",
+          "version": "4",
+          "description": "StoredProcedure",
+          "type": "SQL",
+          "filepath": "C:\\Users\\KEVIN CHANG\\Desktop\\Caso-3\\flyway-9.17.0\\sql\\V4__StoredProcedure.sql",
+          "executionTime": 37
+        },
+        {
+          "category": "Versioned",
+          "version": "5",
+          "description": "Views",
+          "type": "SQL",
+          "filepath": "C:\\Users\\KEVIN CHANG\\Desktop\\Caso-3\\flyway-9.17.0\\sql\\V5__Views.sql",
+          "executionTime": 321
+        },
+        {
+          "category": "Versioned",
+          "version": "6",
+          "description": "InsertData",
+          "type": "SQL",
+          "filepath": "C:\\Users\\KEVIN CHANG\\Desktop\\Caso-3\\flyway-9.17.0\\sql\\V6__InsertData.sql",
+          "executionTime": 51
+        },
+        {
+          "category": "Versioned",
+          "version": "7",
+          "description": "ProcedureTVP",
+          "type": "SQL",
+          "filepath": "C:\\Users\\KEVIN CHANG\\Desktop\\Caso-3\\flyway-9.17.0\\sql\\V7__ProcedureTVP.sql",
+          "executionTime": 14
+        },
+        {
+          "category": "Versioned",
+          "version": "8",
+          "description": "EfficiencyView",
+          "type": "SQL",
+          "filepath": "C:\\Users\\KEVIN CHANG\\Desktop\\Caso-3\\flyway-9.17.0\\sql\\V8__EfficiencyView.sql",
+          "executionTime": 673
+        },
+        {
+          "category": "Versioned",
+          "version": "9",
+          "description": "ConsultaNorma",
+          "type": "SQL",
+          "filepath": "C:\\Users\\KEVIN CHANG\\Desktop\\Caso-3\\flyway-9.17.0\\sql\\V9__ConsultaNorma.sql",
+          "executionTime": 189
+        },
+        {
+          "category": "Versioned",
+          "version": "10",
+          "description": "CTE",
+          "type": "SQL",
+          "filepath": "C:\\Users\\KEVIN CHANG\\Desktop\\Caso-3\\flyway-9.17.0\\sql\\V10__CTE.sql",
+          "executionTime": 60
+        }
+      ],
+      "migrationsExecuted": 10,
+      "success": true,
+      "flywayVersion": "9.17.0",
+      "database": "case3",
+      "warnings": [],
+      "timestamp": "2023-05-04T22:47:31.813431700",
+      "operation": "migrate",
+      "exception": null,
+      "licenseFailed": false
     }
   ]
 }
